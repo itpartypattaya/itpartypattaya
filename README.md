@@ -177,6 +177,10 @@ The Python suites are plain `unittest` or `pytest`. ui-verify is different: its 
 
 Turning CI on found one thing on the first run. hermes-dreaming reads the Hermes timezone from `config.yaml` only when PyYAML is installed. Inside the Hermes environment it always is, so on my machine the test passed. On a clean runner it failed: without PyYAML the skill keeps UTC by design, and the test had quietly assumed the library. The suite now runs both ways, so each of the two paths is checked.
 
-## Attribution
+## Work with me
 
-My part is the problem, the requirements, the acceptance criteria, the security and privacy decisions, the review, and running the result on real people and real data. The code and most texts are written with AI assistance, mainly Claude Code and Codex.
+My background is digital marketing: advertising, web analytics and end-to-end tracking, with certificates in Yandex Direct and Yandex Metrica. I can help a company put its numbers in order: decide what is worth measuring, set up the tracking, and build a dashboard the team actually reads, so decisions rest on data instead of guesses.
+
+I also consult on bringing LLMs and AI agents into a business properly. That means finding the tasks where an agent pays off and the ones where it does not, setting the limits on what it may touch, adding the checks that catch a quiet failure, and getting it into everyday use, not left at the demo stage. The repositories above come from that kind of work, run on a real community and a real recruiting agency.
+
+To talk about a project, write to me on Telegram: [@passone](https://t.me/passone).
