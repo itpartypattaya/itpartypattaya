@@ -1,0 +1,61 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:U;src:url(src/unbounded.woff2) format("woff2");font-weight:200 900}
+@font-face{font-family:G;src:url(src/golos.woff2) format("woff2");font-weight:400 900}
+html,body{margin:0;background:#0b0f1f}
+.b{position:relative;width:1264px;height:400px;overflow:hidden;font-family:G,sans-serif;color:#fff;
+  background:radial-gradient(ellipse 60% 90% at 78% 50%,#1a2150 0%,#0d1124 60%,#0b0f1f 100%)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:32px 32px}
+.t{position:absolute;left:64px;top:0;bottom:0;width:540px;display:flex;flex-direction:column;justify-content:center}
+.k{font-family:U;font-weight:600;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:#f5a623}
+.n{font-family:U;font-weight:800;font-size:56px;line-height:1.05;margin:16px 0 0;letter-spacing:-.01em}
+.n{white-space:nowrap}
+.s{font-size:23px;line-height:1.4;color:#d9dcef;margin:18px 0 0;text-wrap:balance}
+.panel{position:absolute;right:64px;top:50%;transform:translateY(-50%);width:560px;border:1px solid #2b3570;border-radius:14px;background:rgba(20,26,74,.75);
+  box-shadow:0 20px 60px rgba(0,0,0,.45);padding:18px 24px;font-family:ui-monospace,Consolas,monospace;font-size:19px;box-sizing:border-box}
+.h{display:flex;gap:10px;align-items:center;margin-bottom:8px;color:#7d86c2;font-size:15px}.h i{width:12px;height:12px;border-radius:50%;background:#2b3570;display:block}
+.h span{margin-left:10px}
+.row{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid #232b5c;gap:12px}
+.row:last-child{border-bottom:0}
+.name{color:#c9cdea;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.r{display:flex;align-items:center;white-space:nowrap}
+.v{font-weight:700;padding:4px 12px;border-radius:999px;font-size:16px}
+.ok{background:#173d2a;color:#6ee7a0}.bad{background:#4a1a14;color:#ff8a70}.nul{background:#3a2f12;color:#ffd27a}.info{background:#1f2a66;color:#aab4ff}
+.num{color:#ffb84d;margin-right:14px;font-size:16px}
+.bar{position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,#f5a623,#f0532f)}
+</style></head><body><div class="b"><div class="grid"></div>
+<div class="t"><div class="k" id="k"></div><div class="n" id="n"></div><div class="s" id="s"></div></div>
+<div class="panel"><div class="h"><i></i><i></i><i></i><span id="ph"></span></div><div id="rows"></div></div>
+<div class="bar"></div></div>
+<script>
+const D = {
+  "ui-verify": ["Claude Code plugin", "ui-verify", "Web layout checked with numbers, not by eyeballing screenshots.", "checks · 1280 px", [
+    ["horizontal overflow","0 px","ok","true"],["text contrast","3.1 : 1","bad","false"],["card heights equal","±0 px","ok","true"],["glyph coverage","no font","nul","null"],["winning CSS rule",".card .title","ok","true"]]],
+  "reels-montage": ["Claude Code plugin · Claude directory", "IT Reelsmaker", "A raw talking-head take in, a finished vertical video out.", "it-reelsmaker · render plan", [
+    ["pauses and retakes","by audio","ok","cut"],["virtual camera","face-aware","ok","framed"],["subtitles","word-timed","ok","burned"],["loudness","−14 LUFS","ok","mastered"],["B-roll online","needs approval","nul","waiting"]]],
+  "truedev-workflow": ["Codex plugin", "TrueDev Workflow", "Gated steps: nothing moves on until a person approves.", "lifecycle · stage gates", [
+    ["1 · plan","PLAN.md","ok","approved"],["2 · edit scoped files","4 files","ok","approved"],["3 · run the checks","tests","ok","passed"],["4 · commit","git","bad","blocked"],["5 · release","—","nul","not yet"]]],
+  "field-notes-cc": ["Claude Code + Codex skill", "field-notes", "Hard-won fixes, found again before the next one.", "fn search \"timezone\"", [
+    ["shell ignores TZ silently","root cause","info","note"],["cron job runs in UTC","workaround","info","note"],["tool reported a false negative","pitfall","info","note"],["one store per machine","2 agents","ok","shared"],["notes in git","never","bad","no"]]],
+  "mafia-review": ["Codex skill", "Mafia Game Review", "Two transcripts and the host's sheet become a full game review.", "review.md · game 42", [
+    ["night 1","kill","info","seat 7"],["day 2 vote","sheriff","bad","seat 3"],["host sheet vs audio","matched","ok","checked"],["unclear speaker","asked","nul","question"],["ratings","10 players","ok","scored"]]],
+  "hermes-cron": ["Hermes skill · plugin catalog", "hermes-cron", "Cron failures look like success. The doctor finds them.", "cron doctor · read-only", [
+    ["\"30m\" without \"in\"","job 3","bad","false"],["delivered twice","job 7","bad","false"],["deliver: origin","job 2","ok","true"],["half-paused job","job 5","nul","null"],["pinned model","none","ok","true"]]],
+  "hermes-dreaming": ["Hermes plugin · plugin catalog", "hermes-dreaming", "The agent sleeps on the day and keeps only what is worth keeping.", "dream · nightly pass", [
+    ["new stable facts","from chats","info","found"],["conflicts with memory","to decide","nul","review"],["secret in a message","quarantine","bad","held"],["memory changes","max 6","ok","proposed"],["deleted from storage","nothing","ok","0"]]],
+  "field-notes": ["Hermes skill · plugin catalog", "hermes-field-notes", "Pitfalls with root cause, and core patches that survive an update.", "after hermes update", [
+    ["patch registry","4 patches","info","read"],["patch-gateway-retry","still in core","ok","applied"],["patch-cron-delivery","wiped","bad","lost"],["upstream fixed it","release notes","nul","check"],["notes","on this machine","ok","local"]]],
+  "hermes-dashboard": ["Hermes dashboard", "hermes-dashboard", "What the agent really does and costs, from its own telemetry.", "dashboard · built by cron", [
+    ["host","disk 57%","ok","healthy"],["model routing","3 providers","info","mapped"],["cost today","from logs","ok","honest"],["memory","near limit","nul","watch"],["typed by hand","never","ok","0"]]],
+};
+const id = new URLSearchParams(location.search).get("id");
+const [k, n, s, ph, rows] = D[id];
+document.getElementById("k").textContent = k;
+const ne = document.getElementById("n"); ne.textContent = n;
+document.fonts.ready.then(() => { for (let fs = 56; ne.scrollWidth > 540 && fs > 30; fs -= 2) ne.style.fontSize = fs + "px"; });
+document.getElementById("s").textContent = s;
+document.getElementById("ph").textContent = ph;
+document.getElementById("rows").innerHTML = rows.map(([a,b,c,d]) =>
+  `<div class="row"><span class="name">${a}</span><span class="r"><span class="num">${b}</span><span class="v ${c}">${d}</span></span></div>`).join("");
+</script></body></html>
