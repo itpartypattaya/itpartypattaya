@@ -8,7 +8,7 @@ I am a digital marketer, not a software engineer. I run a Russian-speaking IT co
 
 ### reels-montage · IT Reelsmaker
 
-<a href="https://github.com/itpartypattaya/reels-montage"><img src="assets/reels-montage.jpg" width="100%" alt="IT Reelsmaker: talking-head footage turned into a finished vertical video inside Claude Code"></a>
+<a href="https://github.com/itpartypattaya/reels-montage"><img src="assets/reels-montage.jpg" width="100%" alt="IT Reelsmaker: a raw talking-head take in, a finished vertical video out"></a>
 
 Claude Code plugins that turn a raw talking-head take from a phone into a finished 1080×1920 video for Reels, Shorts or TikTok: pauses and retakes cut by audio, a virtual camera, word-timed subtitles, on-brand graphics in Remotion, face-aware layout and mastering.
 
@@ -25,7 +25,7 @@ claude plugin install it-reelsmaker@itparty
 
 ### truedev-codex-workflow
 
-<a href="https://github.com/itpartypattaya/truedev-codex-workflow"><img src="assets/truedev-workflow.jpg" width="100%" alt="Abstract illustration of a gated development workflow"></a>
+<a href="https://github.com/itpartypattaya/truedev-codex-workflow"><img src="assets/truedev-workflow.jpg" width="100%" alt="TrueDev Workflow: gated steps, nothing moves on until a person approves"></a>
 
 A native Codex plugin for gated, file-backed product and engineering work.
 
@@ -73,7 +73,7 @@ Install: `git clone https://github.com/itpartypattaya/field-notes.git`, then `pw
 
 ### mafia-review-skill
 
-<a href="https://github.com/itpartypattaya/mafia-review-skill"><img src="assets/mafia-review.jpg" width="100%" alt="Abstract illustration of an AI review of a Mafia game"></a>
+<a href="https://github.com/itpartypattaya/mafia-review-skill"><img src="assets/mafia-review.jpg" width="100%" alt="Mafia Game Review: two transcripts and the host's sheet become a full game review"></a>
 
 A Codex skill that reviews a club game of Mafia from two audio transcripts and the host's score sheet: roles, night events, timeline, key moments and ratings.
 
@@ -89,7 +89,7 @@ A Codex skill that reviews a club game of Mafia from two audio transcripts and t
 
 ### hermes-cron
 
-<a href="https://github.com/itpartypattaya/hermes-cron"><img src="assets/hermes-cron.jpg" width="100%" alt="Abstract illustration of scheduled automation for the Hermes agent"></a>
+<a href="https://github.com/itpartypattaya/hermes-cron"><img src="assets/hermes-cron.jpg" width="100%" alt="hermes-cron: a read-only doctor that finds cron failures that look like success"></a>
 
 A skill that teaches Hermes to work with its cron scheduler carefully, plus a read-only doctor script that checks existing jobs.
 
@@ -103,7 +103,7 @@ Install: `hermes skills install itpartypattaya/hermes-cron/skills/hermes-cron`
 
 ### hermes-dreaming
 
-<a href="https://github.com/itpartypattaya/hermes-dreaming"><img src="assets/hermes-dreaming.jpg" width="100%" alt="Abstract illustration of the agent's nightly memory consolidation"></a>
+<a href="https://github.com/itpartypattaya/hermes-dreaming"><img src="assets/hermes-dreaming.jpg" width="100%" alt="hermes-dreaming: nightly memory consolidation for the Hermes agent"></a>
 
 Nightly, deterministic memory consolidation for Hermes: the agent "dreams" over the day's conversations and proposes only the memory updates worth keeping.
 
@@ -117,7 +117,7 @@ Install from the catalog: `hermes plugins install hermes-dreaming`
 
 ### hermes-field-notes
 
-<a href="https://github.com/itpartypattaya/hermes-field-notes"><img src="assets/field-notes.jpg" width="100%" alt="Abstract illustration of engineering field notes"></a>
+<a href="https://github.com/itpartypattaya/hermes-field-notes"><img src="assets/field-notes.jpg" width="100%" alt="hermes-field-notes: pitfalls with root cause and core patches that survive an update"></a>
 
 Field notes for Hermes: pitfalls recorded with their root cause, plus a registry of local patches to the Hermes core that is checked after every `hermes update`.
 
@@ -131,7 +131,7 @@ Install: `hermes skills install itpartypattaya/hermes-field-notes/skills/hermes-
 
 ### hermes-dashboard
 
-<a href="https://github.com/itpartypattaya/hermes-dashboard"><img src="assets/hermes-dashboard.jpg" width="100%" alt="Abstract illustration of the Hermes system dashboard"></a>
+<a href="https://github.com/itpartypattaya/hermes-dashboard"><img src="assets/hermes-dashboard.jpg" width="100%" alt="hermes-dashboard: what the agent does and costs, from its own telemetry"></a>
 
 A static system dashboard for a Hermes installation: host status, security, model routing, honest cost, memory, cron economics and a capability map, rebuilt by cron from the agent's own telemetry.
 
@@ -159,17 +159,21 @@ These tools exist because something real runs on them.
 
 ## How the work is checked
 
-Test counts as of 11 October 2026. Every suite below is plain `unittest` from the standard library, uses synthetic data and needs no network, accounts or tokens. GitHub Actions runs it on every push, on three Python versions each.
+Test counts as of 11 October 2026. None of the suites needs network, accounts or tokens; they use synthetic data. GitHub Actions runs every one of them on every push.
 
-| Repository | Tests | Python in CI | Status |
+| Repository | Tests | Runs on | Status |
 |---|---|---|---|
+| reels-montage | 337 (pytest), plus release rules and a type-check of the Remotion kit | 3.12 on Linux, macOS and Windows; 3.9 on Linux | [![tests](https://github.com/itpartypattaya/reels-montage/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/reels-montage/actions/workflows/tests.yml) |
 | hermes-dreaming | 321 | 3.9, 3.11, 3.13, each with and without PyYAML | [![tests](https://github.com/itpartypattaya/hermes-dreaming/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-dreaming/actions/workflows/tests.yml) |
+| truedev-codex-workflow | 193 | 3.9, 3.11, 3.13 | [![tests](https://github.com/itpartypattaya/truedev-codex-workflow/actions/workflows/ci.yml/badge.svg)](https://github.com/itpartypattaya/truedev-codex-workflow/actions/workflows/ci.yml) |
 | telegram-stories-stat | 128 | 3.10, 3.12, 3.13 | [![tests](https://github.com/itpartypattaya/telegram-stories-stat/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/telegram-stories-stat/actions/workflows/tests.yml) |
+| ui-verify | 102 cases in headless Chrome | Node 20, Chrome on Linux | [![tests](https://github.com/itpartypattaya/ui-verify/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/ui-verify/actions/workflows/tests.yml) |
 | hermes-field-notes | 95 | 3.11, 3.12, 3.13 | [![tests](https://github.com/itpartypattaya/hermes-field-notes/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-field-notes/actions/workflows/tests.yml) |
 | hermes-dashboard | 67 | 3.9, 3.11, 3.13 | [![tests](https://github.com/itpartypattaya/hermes-dashboard/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-dashboard/actions/workflows/tests.yml) |
 | hermes-cron | 48 | 3.9, 3.11, 3.13 | [![tests](https://github.com/itpartypattaya/hermes-cron/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-cron/actions/workflows/tests.yml) |
+| field-notes | 37 | 3.9, 3.11, 3.13 on Linux; 3.12 on Windows | [![tests](https://github.com/itpartypattaya/field-notes/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/field-notes/actions/workflows/tests.yml) |
 
-truedev-codex-workflow and reels-montage already had their own CI. ui-verify and field-notes have tests in their repositories but no CI yet; mafia-review-skill has none.
+The Python suites are plain `unittest` or `pytest`. ui-verify is different: its self-test is a web page with a deliberate defect and a healthy control for every check, so CI opens it in a real headless Chrome and fails unless every case passes. mafia-review-skill is the one tool here without tests.
 
 Turning CI on found one thing on the first run. hermes-dreaming reads the Hermes timezone from `config.yaml` only when PyYAML is installed. Inside the Hermes environment it always is, so on my machine the test passed. On a clean runner it failed: without PyYAML the skill keeps UTC by design, and the test had quietly assumed the library. The suite now runs both ways, so each of the two paths is checked.
 
