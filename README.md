@@ -117,7 +117,19 @@ These tools exist because something real runs on them.
 
 ## How the work is checked
 
-Most repositories here ship offline tests that run without network or accounts. Only two run them in GitHub Actions today: truedev-codex-workflow and reels-montage. I would rather say that than show green badges I do not have. CI for the Hermes repositories is the next step, and test counts with dates will go here once it is in place.
+Test counts as of 11 October 2026. Every suite below is plain `unittest` from the standard library, uses synthetic data and needs no network, accounts or tokens. GitHub Actions runs it on every push, on three Python versions each.
+
+| Repository | Tests | Python in CI | Status |
+|---|---|---|---|
+| hermes-dreaming | 321 | 3.9, 3.11, 3.13, each with and without PyYAML | [![tests](https://github.com/itpartypattaya/hermes-dreaming/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-dreaming/actions/workflows/tests.yml) |
+| telegram-stories-stat | 128 | 3.10, 3.12, 3.13 | [![tests](https://github.com/itpartypattaya/telegram-stories-stat/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/telegram-stories-stat/actions/workflows/tests.yml) |
+| hermes-field-notes | 95 | 3.11, 3.12, 3.13 | [![tests](https://github.com/itpartypattaya/hermes-field-notes/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-field-notes/actions/workflows/tests.yml) |
+| hermes-dashboard | 67 | 3.9, 3.11, 3.13 | [![tests](https://github.com/itpartypattaya/hermes-dashboard/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-dashboard/actions/workflows/tests.yml) |
+| hermes-cron | 48 | 3.9, 3.11, 3.13 | [![tests](https://github.com/itpartypattaya/hermes-cron/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-cron/actions/workflows/tests.yml) |
+
+truedev-codex-workflow and reels-montage have had their own CI from the start. The other tools in this profile have tests in the repository but no CI yet.
+
+Turning CI on found one thing on the first run. hermes-dreaming reads the Hermes timezone from `config.yaml` only when PyYAML is installed. Inside the Hermes environment it always is, so on my machine the test passed. On a clean runner it failed: without PyYAML the skill keeps UTC by design, and the test had quietly assumed the library. The suite now runs both ways, so each of the two paths is checked.
 
 ## Attribution
 
