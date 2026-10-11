@@ -85,7 +85,23 @@ A Codex skill that reviews a club game of Mafia from two audio transcripts and t
 
 ## Hermes Agent skills and plugins
 
-[Hermes Agent](https://github.com/NousResearch/hermes-agent) by Nous Research is the agent I use every day. Three of the plugins below are listed in the official Hermes Plugin Catalog.
+[Hermes Agent](https://github.com/NousResearch/hermes-agent) by Nous Research is the agent I use every day. Four of the plugins below are listed in the official Hermes Plugin Catalog.
+
+### holographic · memory provider
+
+<a href="https://github.com/itpartypattaya/hermes-plugin-holographic"><img src="assets/holographic.jpg" width="100%" alt="holographic: local fact memory for Hermes, no API key, no network, no model calls"></a>
+
+The local memory provider that shipped inside Hermes core as `holographic`: a SQLite fact store with full-text search, trust scoring, entity resolution and HRR retrieval. Everything stays on your machine.
+
+**Why it exists.** When the provider was scheduled to leave Hermes core on 15 October 2026, Nous Research handed it off, and since October 2026 I maintain it. Same provider name, same config, same database: users who run `memory.provider: holographic` keep their facts after the switch.
+
+**What it is.** A Hermes plugin with two tools, `fact_store` and `fact_feedback`. Before each turn it recalls up to five facts that pass a relevance gate, so "ok, thanks" recalls nothing, and frames them as data. New facts that look like JSON, chat markup or instructions are refused, and possible conflicts are pointed out but never edited away. Words match in their inflected forms in more than a dozen languages, from Russian and Arabic to Hindi, with Chinese, Japanese, Korean and Thai matched by character n-grams. 270 tests run on Linux, macOS and Windows.
+
+<a href="https://github.com/itpartypattaya/hermes-plugin-holographic"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="hermes-plugin-holographic on GitHub"></a> <a href="https://github.com/itpartypattaya/hermes-plugin-holographic/releases/latest"><img src="https://img.shields.io/badge/Latest%20release-141A4A?style=for-the-badge&logo=github&logoColor=white" alt="Latest release"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/holographic"><img src="https://img.shields.io/badge/Listed%20in-Hermes%20Plugin%20Catalog-141A4A?style=for-the-badge" alt="Listed in the Hermes Plugin Catalog"></a> <a href="https://github.com/itpartypattaya/hermes-plugin-holographic/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-plugin-holographic?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
+
+Install: `hermes plugins install holographic`, then `hermes config set memory.provider holographic`.
+
+If you use holographic memory, a star on the repository helps other Hermes users find the maintained copy.
 
 ### hermes-cron
 
@@ -164,6 +180,7 @@ Test counts as of 11 October 2026. None of the suites needs network, accounts or
 | Repository | Tests | Runs on | Status |
 |---|---|---|---|
 | reels-montage | 337 (pytest), plus release rules and a type-check of the Remotion kit | 3.12 on Linux, macOS and Windows; 3.9 on Linux | [![tests](https://github.com/itpartypattaya/reels-montage/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/reels-montage/actions/workflows/tests.yml) |
+| hermes-plugin-holographic | 270 (pytest), plus `hermes plugins validate` | 3.14 on Linux, macOS and Windows | [![tests](https://github.com/itpartypattaya/hermes-plugin-holographic/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-plugin-holographic/actions/workflows/tests.yml) |
 | hermes-dreaming | 321 | 3.9, 3.11, 3.13, each with and without PyYAML | [![tests](https://github.com/itpartypattaya/hermes-dreaming/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-dreaming/actions/workflows/tests.yml) |
 | truedev-codex-workflow | 193 | 3.9, 3.11, 3.13 | [![tests](https://github.com/itpartypattaya/truedev-codex-workflow/actions/workflows/ci.yml/badge.svg)](https://github.com/itpartypattaya/truedev-codex-workflow/actions/workflows/ci.yml) |
 | telegram-stories-stat | 128 | 3.10, 3.12, 3.13 | [![tests](https://github.com/itpartypattaya/telegram-stories-stat/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/telegram-stories-stat/actions/workflows/tests.yml) |
