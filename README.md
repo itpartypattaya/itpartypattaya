@@ -16,7 +16,7 @@ Claude Code plugins that turn a raw talking-head take from a phone into a finish
 
 **What it is.** A plugin marketplace, `itparty`, with two plugins. `it-reelsmaker` edits locally with ffmpeg, Python, Node.js and Remotion. `it-reelsmaker-online` is an optional add-on for stock footage, CC-licensed memes and paid AI video for B-roll, each used only after you approve the plan. A privacy note lists what data leaves the computer. `it-reelsmaker` passed Anthropic's review and has been in the Claude plugin directory since 2 October 2026.
 
-<a href="https://github.com/itpartypattaya/reels-montage"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="reels-montage on GitHub"></a> <a href="https://claude.ai/customize/plugins/id/c1ae3d1a-cbd2-4ee3-be95-a87be163ba1f%40anthropic-plugin-directory"><img src="https://img.shields.io/badge/Listed%20in-Claude%20plugin%20directory-141A4A?style=for-the-badge&logo=claude&logoColor=white" alt="Listed in the Claude plugin directory"></a>
+<a href="https://github.com/itpartypattaya/reels-montage"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="reels-montage on GitHub"></a> <a href="https://claude.ai/customize/plugins/id/c1ae3d1a-cbd2-4ee3-be95-a87be163ba1f%40anthropic-plugin-directory"><img src="https://img.shields.io/badge/Listed%20in-Claude%20plugin%20directory-141A4A?style=for-the-badge&logo=claude&logoColor=white" alt="Listed in the Claude plugin directory"></a> <a href="https://github.com/itpartypattaya/reels-montage/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/reels-montage?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
 ```
 claude plugin marketplace add https://github.com/itpartypattaya/reels-montage.git
@@ -33,7 +33,7 @@ A native Codex plugin for gated, file-backed product and engineering work.
 
 **What it is.** A Codex plugin with two skills, Codex hooks and a Python runner. No telemetry; the only network request is an update check, and only with consent. It ships in two editions: one for a GitHub marketplace, one for the ChatGPT Plugins Directory.
 
-<a href="https://github.com/itpartypattaya/truedev-codex-workflow"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="truedev-codex-workflow on GitHub"></a> <a href="https://github.com/itpartypattaya/truedev-codex-workflow/releases/latest"><img src="https://img.shields.io/badge/Latest%20release-141A4A?style=for-the-badge&logo=github&logoColor=white" alt="Latest release"></a>
+<a href="https://github.com/itpartypattaya/truedev-codex-workflow"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="truedev-codex-workflow on GitHub"></a> <a href="https://github.com/itpartypattaya/truedev-codex-workflow/releases/latest"><img src="https://img.shields.io/badge/Latest%20release-141A4A?style=for-the-badge&logo=github&logoColor=white" alt="Latest release"></a> <a href="https://github.com/itpartypattaya/truedev-codex-workflow/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/truedev-codex-workflow?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
 ```
 codex plugin marketplace add itpartypattaya/truedev-codex-workflow --ref main
@@ -50,7 +50,7 @@ A skill for AI coding agents, and a set of plain browser functions for people, t
 
 **What it is.** Every check runs inside the page, measures what the browser actually computed and answers in three states: `true`, `false` with the element, numbers and cause, or `null` with the reason it cannot tell. It never fills a gap with a made-up number. A Claude Code plugin in JavaScript; the functions also run on their own in DevTools, Playwright, Puppeteer or Cypress.
 
-<a href="https://github.com/itpartypattaya/ui-verify"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="ui-verify on GitHub"></a>
+<a href="https://github.com/itpartypattaya/ui-verify"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="ui-verify on GitHub"></a> <a href="https://github.com/itpartypattaya/ui-verify/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/ui-verify?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
 ```
 claude plugin marketplace add itpartypattaya/ui-verify
@@ -67,7 +67,7 @@ Engineering field notes shared by Claude Code and Codex CLI: findings that outli
 
 **What it is.** A skill with a Python 3.9+ standard-library script and installers for Windows and Linux/macOS that link it into both agents' skill folders. The repository holds only the skill; the notes stay local and never go into git, because they contain real paths, versions and project details. No network. Its bigger sibling for Hermes is hermes-field-notes below.
 
-<a href="https://github.com/itpartypattaya/field-notes"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="field-notes on GitHub"></a> <a href="https://github.com/itpartypattaya/field-notes/releases/latest"><img src="https://img.shields.io/badge/Latest%20release-141A4A?style=for-the-badge&logo=github&logoColor=white" alt="Latest release"></a>
+<a href="https://github.com/itpartypattaya/field-notes"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="field-notes on GitHub"></a> <a href="https://github.com/itpartypattaya/field-notes/releases/latest"><img src="https://img.shields.io/badge/Latest%20release-141A4A?style=for-the-badge&logo=github&logoColor=white" alt="Latest release"></a> <a href="https://github.com/itpartypattaya/field-notes/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/field-notes?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
 Install: `git clone https://github.com/itpartypattaya/field-notes.git`, then `pwsh -File install.ps1` on Windows or `sh install.sh` elsewhere.
 
@@ -81,7 +81,7 @@ A Codex skill that reviews a club game of Mafia from two audio transcripts and t
 
 **What it is.** A `SKILL.md` method plus two standard-library Python scripts that score the review and validate the bundle before import.
 
-<a href="https://github.com/itpartypattaya/mafia-review-skill"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="mafia-review-skill on GitHub"></a>
+<a href="https://github.com/itpartypattaya/mafia-review-skill"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="mafia-review-skill on GitHub"></a> <a href="https://github.com/itpartypattaya/mafia-review-skill/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/mafia-review-skill?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
 ## Hermes Agent skills and plugins
 
@@ -113,7 +113,7 @@ A skill that teaches Hermes to work with its cron scheduler carefully, plus a re
 
 **What it is.** A Hermes skill that can also be installed as a plugin. Python standard library only. The doctor only reads: no network, no API keys, it registers no tools or hooks and writes nothing.
 
-<a href="https://github.com/itpartypattaya/hermes-cron"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="hermes-cron on GitHub"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-cron"><img src="https://img.shields.io/badge/Listed%20in-Hermes%20Plugin%20Catalog-141A4A?style=for-the-badge" alt="Listed in the Hermes Plugin Catalog"></a>
+<a href="https://github.com/itpartypattaya/hermes-cron"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="hermes-cron on GitHub"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-cron"><img src="https://img.shields.io/badge/Listed%20in-Hermes%20Plugin%20Catalog-141A4A?style=for-the-badge" alt="Listed in the Hermes Plugin Catalog"></a> <a href="https://github.com/itpartypattaya/hermes-cron/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-cron?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
 Install: `hermes skills install itpartypattaya/hermes-cron/skills/hermes-cron`
 
@@ -127,7 +127,7 @@ Nightly, deterministic memory consolidation for Hermes: the agent "dreams" over 
 
 **What it is.** A plugin or a plain skill, Python standard library, Hermes 0.21 or later. No network, and the scripts never call a model. The agent makes at most six memory changes a night and nothing is deleted from storage. Secrets and prompt-injection attempts go to quarantine; the README says plainly that this is a regex filter, not a guarantee.
 
-<a href="https://github.com/itpartypattaya/hermes-dreaming"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="hermes-dreaming on GitHub"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-dreaming"><img src="https://img.shields.io/badge/Listed%20in-Hermes%20Plugin%20Catalog-141A4A?style=for-the-badge" alt="Listed in the Hermes Plugin Catalog"></a>
+<a href="https://github.com/itpartypattaya/hermes-dreaming"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="hermes-dreaming on GitHub"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-dreaming"><img src="https://img.shields.io/badge/Listed%20in-Hermes%20Plugin%20Catalog-141A4A?style=for-the-badge" alt="Listed in the Hermes Plugin Catalog"></a> <a href="https://github.com/itpartypattaya/hermes-dreaming/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-dreaming?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
 Install from the catalog: `hermes plugins install hermes-dreaming`
 
@@ -141,7 +141,7 @@ Field notes for Hermes: pitfalls recorded with their root cause, plus a registry
 
 **What it is.** A skill or plugin, Python 3.11+ standard library. Notes stay on the machine and the core is only read. `--read-only` mode guarantees no writes and no network; otherwise the network is used for an optional Telegram dashboard and a public GitHub API check every 12 hours, which can be switched off.
 
-<a href="https://github.com/itpartypattaya/hermes-field-notes"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="hermes-field-notes on GitHub"></a> <a href="https://github.com/itpartypattaya/hermes-field-notes/releases/latest"><img src="https://img.shields.io/badge/Latest%20release-141A4A?style=for-the-badge&logo=github&logoColor=white" alt="Latest release"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-field-notes"><img src="https://img.shields.io/badge/Listed%20in-Hermes%20Plugin%20Catalog-141A4A?style=for-the-badge" alt="Listed in the Hermes Plugin Catalog"></a>
+<a href="https://github.com/itpartypattaya/hermes-field-notes"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="hermes-field-notes on GitHub"></a> <a href="https://github.com/itpartypattaya/hermes-field-notes/releases/latest"><img src="https://img.shields.io/badge/Latest%20release-141A4A?style=for-the-badge&logo=github&logoColor=white" alt="Latest release"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-field-notes"><img src="https://img.shields.io/badge/Listed%20in-Hermes%20Plugin%20Catalog-141A4A?style=for-the-badge" alt="Listed in the Hermes Plugin Catalog"></a> <a href="https://github.com/itpartypattaya/hermes-field-notes/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-field-notes?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
 Install: `hermes skills install itpartypattaya/hermes-field-notes/skills/hermes-field-notes`
 
@@ -155,13 +155,15 @@ A static system dashboard for a Hermes installation: host status, security, mode
 
 **What it is.** Python 3.9+, standard library only, English and Russian. The pages are `noindex`, hold only aggregates and no secrets, and have no runtime; the only outside request is Google Fonts, which one setting turns off.
 
-<a href="https://github.com/itpartypattaya/hermes-dashboard"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="hermes-dashboard on GitHub"></a> <a href="https://github.com/itpartypattaya/hermes-dashboard/releases/latest"><img src="https://img.shields.io/badge/Latest%20release-141A4A?style=for-the-badge&logo=github&logoColor=white" alt="Latest release"></a>
+<a href="https://github.com/itpartypattaya/hermes-dashboard"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="hermes-dashboard on GitHub"></a> <a href="https://github.com/itpartypattaya/hermes-dashboard/releases/latest"><img src="https://img.shields.io/badge/Latest%20release-141A4A?style=for-the-badge&logo=github&logoColor=white" alt="Latest release"></a> <a href="https://github.com/itpartypattaya/hermes-dashboard/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-dashboard?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
 Install: clone into `~/.hermes/hermes-dashboard` and run `bin/hermes-dashboard build`; the README has the config steps.
 
 ### telegram-stories-stat
 
 Who viewed your Telegram stories and when, statistics tables and opt-in auto-replies by rules. A Hermes skill backed by a small Telethon service, no LLM inside. Install: `hermes skills install itpartypattaya/telegram-stories-stat/skills/telegram-stories` · [repository](https://github.com/itpartypattaya/telegram-stories-stat)
+
+<a href="https://github.com/itpartypattaya/telegram-stories-stat/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/telegram-stories-stat?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
 ## In production
 
