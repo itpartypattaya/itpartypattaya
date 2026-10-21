@@ -198,7 +198,7 @@ Turning CI on found one thing on the first run. hermes-dreaming reads the Hermes
 
 ## Work with me
 
-My background is digital marketing: advertising, web analytics and end-to-end tracking, with certificates in Yandex Direct and Yandex Metrica. I can help a company put its numbers in order: decide what is worth measuring, set up the tracking, and build a dashboard the team actually reads, so decisions rest on data instead of guesses.
+My background is digital marketing: advertising, web analytics and end-to-end tracking, with certificates in Yandex Direct, Yandex Metrica and Google Ads. I can help a company put its numbers in order: decide what is worth measuring, set up the tracking, and build a dashboard the team actually reads, so decisions rest on data instead of guesses.
 
 I also consult on bringing LLMs and AI agents into a business properly. That means finding the tasks where an agent pays off and the ones where it does not, setting the limits on what it may touch, adding the checks that catch a quiet failure, and getting it into everyday use, not left at the demo stage. The repositories above come from that kind of work, run on a real community and a real recruiting agency.
 
