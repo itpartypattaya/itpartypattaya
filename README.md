@@ -6,6 +6,43 @@ I am a digital marketer, not a software engineer. I run a Russian-speaking IT co
 
 ## Claude Code and Codex tools
 
+Four of my repositories are one idea on two platforms: an agent should remember what you told it, and someone should check that what it remembers is still true. For Claude Code and Codex that is holographic-memory and agent-dreaming, right below; for Hermes it is holographic and hermes-dreaming, further down.
+
+### holographic-memory
+
+<a href="https://github.com/itpartypattaya/holographic-memory"><img src="assets/holographic-memory.jpg" width="100%" alt="holographic-memory: one local memory for Claude Code and Codex"></a>
+
+Long-term memory for Claude Code and Codex, CLI and desktop app: a local SQLite fact store with search in 18 languages, trust scoring, entity resolution, fact history and HRR recall.
+
+**Why it exists.** Each agent keeps its own memory, so what you explained to Claude Code in the morning Codex does not know in the evening. Here both read and write one store on your machine. The engine began as a copy of the Hermes provider holographic, described below.
+
+**What it is.** A hook adds up to five relevant facts to the context before each message, framed as data, and a local MCP server gives the agent 23 memory tools: store, search, change with history, merge duplicates, forget, export. Text that reads like an instruction or holds a credential is refused. By default there is no API key, no network and no model calls; search by meaning and rescoring are opt-in and send text only to an endpoint you choose. Early, version 0.x.
+
+<a href="https://github.com/itpartypattaya/holographic-memory"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="holographic-memory on GitHub"></a> <a href="https://github.com/itpartypattaya/holographic-memory/releases/latest"><img src="https://img.shields.io/badge/Latest%20release-141A4A?style=for-the-badge&logo=github&logoColor=white" alt="Latest release"></a> <a href="https://github.com/itpartypattaya/holographic-memory/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/holographic-memory?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
+
+```
+uv tool install git+https://github.com/itpartypattaya/holographic-memory
+holomem install claude-code
+holomem install codex
+```
+
+### agent-dreaming
+
+<a href="https://github.com/itpartypattaya/agent-dreaming"><img src="assets/agent-dreaming.jpg" width="100%" alt="agent-dreaming: a nightly review of what your agents remember"></a>
+
+A nightly, read-only review of agent memory for Claude Code, Codex CLI and Antigravity: it compares what the agents stored with what you actually said to them and asks you a few short questions a day.
+
+**Why it exists.** Agents that remember also remember wrong things: a guess stored as a fact, one fact told twice in other words, a note about a project that ended a month ago. Nobody goes back to clean that up, and the agent keeps answering from it.
+
+**What it is.** The nightly pass has no model and no network and takes a few seconds; it works with holographic-memory, the reference MCP `memory` server and Claude Code's own memory notes. Your messages are read for the pass and stored nowhere. Memory changes only when you answer, and only through the memory tools your agent already has. Its sibling for Hermes is hermes-dreaming, further down.
+
+<a href="https://github.com/itpartypattaya/agent-dreaming"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="agent-dreaming on GitHub"></a> <a href="https://github.com/itpartypattaya/agent-dreaming/releases/latest"><img src="https://img.shields.io/badge/Latest%20release-141A4A?style=for-the-badge&logo=github&logoColor=white" alt="Latest release"></a> <a href="https://github.com/itpartypattaya/agent-dreaming/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/agent-dreaming?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
+
+```
+uv tool install git+https://github.com/itpartypattaya/agent-dreaming
+dreamem install claude-code
+```
+
 ### reels-montage · IT Reelsmaker
 
 <a href="https://github.com/itpartypattaya/reels-montage"><img src="assets/reels-montage.jpg" width="100%" alt="IT Reelsmaker: a raw talking-head take in, a finished vertical video out"></a>
@@ -95,7 +132,7 @@ The local memory provider that shipped inside Hermes core as `holographic`: a SQ
 
 **Why it exists.** When the provider was scheduled to leave Hermes core on 15 October 2026, Nous Research handed it off, and since October 2026 I maintain it. Same provider name, same config, same database: users who run `memory.provider: holographic` keep their facts after the switch.
 
-**What it is.** A Hermes plugin with two tools, `fact_store` and `fact_feedback`. Before each turn it recalls up to five facts that pass a relevance gate, so "ok, thanks" recalls nothing, and frames them as data. New facts that look like JSON, chat markup or instructions are refused, and possible conflicts are pointed out but never edited away. Words match in their inflected forms in more than a dozen languages, from Russian and Arabic to Hindi, with Chinese, Japanese, Korean and Thai matched by character n-grams. 270 tests run on Linux, macOS and Windows.
+**What it is.** A Hermes plugin with two tools, `fact_store` and `fact_feedback`. Before each turn it recalls up to five facts that pass a relevance gate, so "ok, thanks" recalls nothing, and frames them as data. New facts that look like JSON, chat markup or instructions are refused, and possible conflicts are pointed out but never edited away. Words match in their inflected forms in 18 languages, from Russian and Arabic to Hindi, with Chinese, Japanese, Korean and Thai matched by character n-grams. 3,308 tests run on Linux, macOS and Windows, against both the current Hermes code and its latest release. Its sibling for Claude Code and Codex is holographic-memory, at the top of this page.
 
 <a href="https://github.com/itpartypattaya/hermes-plugin-holographic"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="hermes-plugin-holographic on GitHub"></a> <a href="https://github.com/itpartypattaya/hermes-plugin-holographic/releases/latest"><img src="https://img.shields.io/badge/Latest%20release-141A4A?style=for-the-badge&logo=github&logoColor=white" alt="Latest release"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/holographic"><img src="https://img.shields.io/badge/Listed%20in-Hermes%20Plugin%20Catalog-141A4A?style=for-the-badge" alt="Listed in the Hermes Plugin Catalog"></a> <a href="https://github.com/itpartypattaya/hermes-plugin-holographic/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-plugin-holographic?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
@@ -125,7 +162,7 @@ Nightly, deterministic memory consolidation for Hermes: the agent "dreams" over 
 
 **Why it exists.** Useful facts never reach long-term memory, while the memory itself fills up with stale entries and hits its character limit. The script does the sorting without an LLM and wakes the agent only when there is something to decide.
 
-**What it is.** A plugin or a plain skill, Python standard library, Hermes 0.21 or later. No network, and the scripts never call a model. The agent makes at most six memory changes a night and nothing is deleted from storage. Secrets and prompt-injection attempts go to quarantine; the README says plainly that this is a regex filter, not a guarantee.
+**What it is.** A plugin or a plain skill, Python standard library, Hermes 0.21 or later. No network, and the scripts never call a model. The agent makes at most six memory changes a night and nothing is deleted from storage. Secrets and prompt-injection attempts go to quarantine; the README says plainly that this is a regex filter, not a guarantee. Its sibling for Claude Code, Codex and Antigravity is agent-dreaming, at the top of this page.
 
 <a href="https://github.com/itpartypattaya/hermes-dreaming"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="hermes-dreaming on GitHub"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-dreaming"><img src="https://img.shields.io/badge/Listed%20in-Hermes%20Plugin%20Catalog-141A4A?style=for-the-badge" alt="Listed in the Hermes Plugin Catalog"></a> <a href="https://github.com/itpartypattaya/hermes-dreaming/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-dreaming?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
@@ -177,19 +214,21 @@ These tools exist because something real runs on them.
 
 ## How the work is checked
 
-Test counts as of 11 October 2026. None of the suites needs network, accounts or tokens; they use synthetic data. GitHub Actions runs every one of them on every push.
+Test counts as of 8 November 2026, from the latest green CI run of each repository. None of the suites needs network, accounts or tokens; they use synthetic data. GitHub Actions runs every one of them on every push.
 
 | Repository | Tests | Runs on | Status |
 |---|---|---|---|
-| reels-montage | 337 (pytest), plus release rules and a type-check of the Remotion kit | 3.12 on Linux, macOS and Windows; 3.9 on Linux | [![tests](https://github.com/itpartypattaya/reels-montage/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/reels-montage/actions/workflows/tests.yml) |
-| hermes-plugin-holographic | 270 (pytest), plus `hermes plugins validate` | 3.14 on Linux, macOS and Windows | [![tests](https://github.com/itpartypattaya/hermes-plugin-holographic/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-plugin-holographic/actions/workflows/tests.yml) |
-| hermes-dreaming | 321 | 3.9, 3.11, 3.13, each with and without PyYAML | [![tests](https://github.com/itpartypattaya/hermes-dreaming/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-dreaming/actions/workflows/tests.yml) |
-| truedev-codex-workflow | 193 | 3.9, 3.11, 3.13 | [![tests](https://github.com/itpartypattaya/truedev-codex-workflow/actions/workflows/ci.yml/badge.svg)](https://github.com/itpartypattaya/truedev-codex-workflow/actions/workflows/ci.yml) |
+| hermes-plugin-holographic | 3,308 (pytest), plus `hermes plugins validate` | 3.14 on Linux, macOS and Windows; against current Hermes code and its latest release | [![tests](https://github.com/itpartypattaya/hermes-plugin-holographic/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-plugin-holographic/actions/workflows/tests.yml) |
+| holographic-memory | 2,700 (pytest) | 3.11 and 3.12 on Linux and Windows | [![tests](https://github.com/itpartypattaya/holographic-memory/actions/workflows/test.yml/badge.svg)](https://github.com/itpartypattaya/holographic-memory/actions/workflows/test.yml) |
+| hermes-dreaming | 1,000, plus integration runs against released holographic providers | 3.9, 3.11, 3.13, 3.14, each with and without PyYAML | [![tests](https://github.com/itpartypattaya/hermes-dreaming/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-dreaming/actions/workflows/tests.yml) |
+| reels-montage | 577 (pytest), plus release rules and a type-check of the Remotion kit | 3.12 on Linux, macOS and Windows; 3.9 on Linux | [![tests](https://github.com/itpartypattaya/reels-montage/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/reels-montage/actions/workflows/tests.yml) |
+| agent-dreaming | 294 (pytest), plus `claude plugin validate --strict` and a wheel build | 3.11 and 3.12 on Linux, macOS and Windows | [![tests](https://github.com/itpartypattaya/agent-dreaming/actions/workflows/ci.yml/badge.svg)](https://github.com/itpartypattaya/agent-dreaming/actions/workflows/ci.yml) |
+| truedev-codex-workflow | 193 | 3.11 on Windows and macOS; 3.9 and 3.13 on Linux | [![tests](https://github.com/itpartypattaya/truedev-codex-workflow/actions/workflows/ci.yml/badge.svg)](https://github.com/itpartypattaya/truedev-codex-workflow/actions/workflows/ci.yml) |
 | telegram-stories-stat | 128 | 3.10, 3.12, 3.13 | [![tests](https://github.com/itpartypattaya/telegram-stories-stat/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/telegram-stories-stat/actions/workflows/tests.yml) |
+| hermes-field-notes | 109 | 3.11, 3.12, 3.13 | [![tests](https://github.com/itpartypattaya/hermes-field-notes/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-field-notes/actions/workflows/tests.yml) |
 | ui-verify | 102 cases in headless Chrome | Node 20, Chrome on Linux | [![tests](https://github.com/itpartypattaya/ui-verify/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/ui-verify/actions/workflows/tests.yml) |
-| hermes-field-notes | 95 | 3.11, 3.12, 3.13 | [![tests](https://github.com/itpartypattaya/hermes-field-notes/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-field-notes/actions/workflows/tests.yml) |
-| hermes-dashboard | 67 | 3.9, 3.11, 3.13 | [![tests](https://github.com/itpartypattaya/hermes-dashboard/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-dashboard/actions/workflows/tests.yml) |
-| hermes-cron | 48 | 3.9, 3.11, 3.13 | [![tests](https://github.com/itpartypattaya/hermes-cron/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-cron/actions/workflows/tests.yml) |
+| hermes-dashboard | 95, plus 8 against the latest Hermes release | 3.9, 3.11, 3.13 | [![tests](https://github.com/itpartypattaya/hermes-dashboard/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-dashboard/actions/workflows/tests.yml) |
+| hermes-cron | 83, plus 7 on a store the Hermes core wrote | 3.9, 3.11, 3.13 | [![tests](https://github.com/itpartypattaya/hermes-cron/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-cron/actions/workflows/tests.yml) |
 | field-notes | 37 | 3.9, 3.11, 3.13 on Linux; 3.12 on Windows | [![tests](https://github.com/itpartypattaya/field-notes/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/field-notes/actions/workflows/tests.yml) |
 
 The Python suites are plain `unittest` or `pytest`. ui-verify is different: its self-test is a web page with a deliberate defect and a healthy control for every check, so CI opens it in a real headless Chrome and fails unless every case passes. mafia-review-skill is the one tool here without tests.

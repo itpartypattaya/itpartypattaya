@@ -32,7 +32,7 @@ shot() { # $1 page with query, $2 width, $3 height, $4 output name
   echo "assets/$4.jpg"
 }
 
-ids=${*:-"header ui-verify reels-montage truedev-workflow field-notes-cc mafia-review hermes-cron hermes-dreaming field-notes hermes-dashboard"}
+ids=${*:-"header ui-verify reels-montage truedev-workflow field-notes-cc mafia-review hermes-cron hermes-dreaming field-notes hermes-dashboard holographic holographic-memory agent-dreaming"}
 for id in $ids; do
   if [ "$id" = header ]; then shot header.html 1600 440 header
   else shot "cover.html?id=$id" 1264 400 "$id"
