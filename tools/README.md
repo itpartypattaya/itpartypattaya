@@ -26,6 +26,16 @@ python -m unittest discover -s tools/tests
 GITHUB_TOKEN=$(gh auth token) python tools/stats.py --user itpartypattaya --out assets/stats.svg --maintained-fork hermes-plugin-holographic
 ```
 
-The token only raises the rate limit; no scopes are needed. The Stack and Hardware badge rows in the README are plain shields.io links, edited by hand.
+The token only raises the rate limit; no scopes are needed.
+
+## Badges
+
+GitHub shows README images through its camo proxy, which answers 504 to a random part of the requests to shields.io, so random badges showed as broken links. Static badges (`img.shields.io/badge/...`) are therefore stored in `../assets/badges/`; only the live star counters still come from shields.io. To add a badge, put its shields.io URL in the README and run:
+
+```bash
+python tools/badges.py
+```
+
+It downloads every remote static badge, saves it and points the README at the file. If any badge fails to download as an SVG, nothing is changed.
 
 Fonts: [Unbounded](https://fonts.google.com/specimen/Unbounded) and [Golos Text](https://fonts.google.com/specimen/Golos+Text), both under the SIL Open Font License 1.1 (Latin subsets).
