@@ -4,6 +4,16 @@
 
 I am a digital marketer, not a software engineer. I run a Russian-speaking IT community in Pattaya, help a recruiting agency with its tools, and keep a family AI agent on my own server. Everything below started as a problem in one of those three places, and each repository is the part that someone else can install and use.
 
+**Stack**
+
+<img src="https://img.shields.io/badge/Claude%20Code-D97757?style=flat&logo=claude&logoColor=white" alt="Claude Code"> <img src="https://img.shields.io/badge/Codex%20CLI-10A37F?style=flat" alt="Codex CLI"> <img src="https://img.shields.io/badge/Hermes%20Agent-5B4BDB?style=flat" alt="Hermes Agent"> <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/Node.js-5FA04E?style=flat&logo=nodedotjs&logoColor=white" alt="Node.js"> <img src="https://img.shields.io/badge/Remotion-0B84F3?style=flat" alt="Remotion"> <img src="https://img.shields.io/badge/FFmpeg-007808?style=flat&logo=ffmpeg&logoColor=white" alt="FFmpeg"> <img src="https://img.shields.io/badge/Astro-BC52EE?style=flat&logo=astro&logoColor=white" alt="Astro"> <img src="https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white" alt="SQLite"> <img src="https://img.shields.io/badge/MCP-141A4A?style=flat&logo=modelcontextprotocol&logoColor=white" alt="MCP"> <img src="https://img.shields.io/badge/Telegram-26A5E4?style=flat&logo=telegram&logoColor=white" alt="Telegram"> <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat&logo=githubactions&logoColor=white" alt="GitHub Actions">
+
+**Hardware**
+
+<img src="https://img.shields.io/badge/OVH%20VPS%20%C2%B7%204%20vCPU%20%C2%B7%208%20GB-123F6D?style=flat&logo=ovh&logoColor=white" alt="OVH VPS · 4 vCPU · 8 GB"> <img src="https://img.shields.io/badge/Debian%2012-A81D33?style=flat&logo=debian&logoColor=white" alt="Debian 12"> <img src="https://img.shields.io/badge/ASUS%20ExpertBook%20B1500-000000?style=flat&logo=asus&logoColor=white" alt="ASUS ExpertBook B1500"> <img src="https://img.shields.io/badge/Intel%20Core%20i5--1135G7-0071C5?style=flat&logo=intel&logoColor=white" alt="Intel Core i5-1135G7"> <img src="https://img.shields.io/badge/NVIDIA%20MX330-76B900?style=flat&logo=nvidia&logoColor=white" alt="NVIDIA MX330"> <img src="https://img.shields.io/badge/Windows%2010%20Pro-0078D4?style=flat" alt="Windows 10 Pro"> <img src="https://img.shields.io/badge/Yandex%20Station%20Lite%20%C2%B7%20root-FC3F1D?style=flat" alt="Yandex Station Lite · root">
+
+<a href="https://github.com/itpartypattaya?tab=repositories"><img src="assets/stats.svg" width="100%" alt="GitHub stats of itpartypattaya: repositories, stars, releases, green CI and languages, rebuilt daily from the public GitHub API"></a>
+
 ## Claude Code and Codex tools
 
 Four of my repositories are one idea on two platforms: an agent should remember what you told it, and someone should check that what it remembers is still true. For Claude Code and Codex that is holographic-memory and agent-dreaming, right below; for Hermes it is holographic and hermes-dreaming, further down.

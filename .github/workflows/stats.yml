@@ -1,0 +1,48 @@
+name: stats
+
+# Rebuilds assets/stats.svg from the public GitHub API once a day and commits it only when the
+# numbers changed. A failed API call fails the run and leaves the old card in place.
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - tools/stats.py
+      - tools/tests/**
+      - .github/workflows/stats.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stats
+  cancel-in-progress: false
+
+jobs:
+  card:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tests
+        run: python -m unittest discover -s tools/tests -v
+      - name: Build the card
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python tools/stats.py --user itpartypattaya --out assets/stats.svg --maintained-fork hermes-plugin-holographic
+      - name: Commit if changed
+        run: |
+          git add assets/stats.svg
+          if git diff --cached --quiet; then
+            echo "numbers unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh stats card"
+          git push
