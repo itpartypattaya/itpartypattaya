@@ -202,6 +202,25 @@ Who viewed your Telegram stories and when, statistics tables and opt-in auto-rep
 
 <a href="https://github.com/itpartypattaya/telegram-stories-stat/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/telegram-stories-stat?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
+## Smart speaker
+
+### yandex-station-lite-spotify
+
+<a href="https://github.com/itpartypattaya/yandex-station-lite-spotify"><img src="assets/yandex-station-lite-spotify.jpg" width="100%" alt="yandex-station-lite-spotify: Spotify Connect on a rooted Yandex Station Lite"></a>
+
+Spotify Connect on a rooted Yandex Station Lite: an installer of Spotify Soloist, Spotify's official Connect client. The speaker shows up in the Spotify app as a Connect device and plays music, and Alice still talks over it.
+
+**Why it exists.** The open-source client librespot got an audio key error on my account, while the official Soloist played. But Soloist does not run on the speaker's own system, and a hand-made install on a speaker with 244 MB of RAM is easy to break and hard to undo.
+
+**What it is.** A Python script on your computer builds a private Debian trixie armhf runtime: about 130 packages checked by SHA256, of which only the libraries Soloist actually needs are kept. Soloist itself is downloaded from Spotify's CDN and is not stored in the repository. `deploy.py` installs the kit over ADB; on the speaker every file is checked against a manifest, the new version is test-started, and on any failure the old one comes back. Music volume follows Alice's, and with Quasar Bridge voice commands such as "pause in Spotify" work. It is an experiment, tested on one speaker and one Premium account, and the README lists what it changes system-wide. Needs root, ADB, Spotify Premium and a Soloist API key.
+
+<a href="https://github.com/itpartypattaya/yandex-station-lite-spotify"><img src="https://img.shields.io/badge/Repository-F5A623?style=for-the-badge&logo=github&logoColor=0B0F1F" alt="yandex-station-lite-spotify on GitHub"></a> <a href="https://github.com/itpartypattaya/yandex-station-lite-spotify/releases/latest"><img src="https://img.shields.io/badge/Latest%20release-141A4A?style=for-the-badge&logo=github&logoColor=white" alt="Latest release"></a> <a href="https://github.com/itpartypattaya/yandex-station-lite-spotify/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/yandex-station-lite-spotify?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
+
+```
+python3 build/build-kit.py --out kit
+python3 deploy.py --kit kit --serial SPEAKER_IP:5555 --key soloist.key
+```
+
 ## In production
 
 These tools exist because something real runs on them.
@@ -229,9 +248,10 @@ Test counts as of 8 November 2026, from the latest green CI run of each reposito
 | ui-verify | 102 cases in headless Chrome | Node 20, Chrome on Linux | [![tests](https://github.com/itpartypattaya/ui-verify/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/ui-verify/actions/workflows/tests.yml) |
 | hermes-dashboard | 95, plus 8 against the latest Hermes release | 3.9, 3.11, 3.13 | [![tests](https://github.com/itpartypattaya/hermes-dashboard/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-dashboard/actions/workflows/tests.yml) |
 | hermes-cron | 83, plus 7 on a store the Hermes core wrote | 3.9, 3.11, 3.13 | [![tests](https://github.com/itpartypattaya/hermes-cron/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/hermes-cron/actions/workflows/tests.yml) |
+| yandex-station-lite-spotify | 17 for the kit builder, plus 32 for the speaker's scripts | 3.12 and busybox on Linux | [![tests](https://github.com/itpartypattaya/yandex-station-lite-spotify/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/yandex-station-lite-spotify/actions/workflows/tests.yml) |
 | field-notes | 37 | 3.9, 3.11, 3.13 on Linux; 3.12 on Windows | [![tests](https://github.com/itpartypattaya/field-notes/actions/workflows/tests.yml/badge.svg)](https://github.com/itpartypattaya/field-notes/actions/workflows/tests.yml) |
 
-The Python suites are plain `unittest` or `pytest`. ui-verify is different: its self-test is a web page with a deliberate defect and a healthy control for every check, so CI opens it in a real headless Chrome and fails unless every case passes. mafia-review-skill is the one tool here without tests.
+The Python suites are plain `unittest` or `pytest`. ui-verify is different: its self-test is a web page with a deliberate defect and a healthy control for every check, so CI opens it in a real headless Chrome and fails unless every case passes. yandex-station-lite-spotify runs the speaker's shell scripts under busybox, with stand-ins for the commands that touch the hardware. mafia-review-skill is the one tool here without tests.
 
 Turning CI on found one thing on the first run. hermes-dreaming reads the Hermes timezone from `config.yaml` only when PyYAML is installed. Inside the Hermes environment it always is, so on my machine the test passed. On a clean runner it failed: without PyYAML the skill keeps UTC by design, and the test had quietly assumed the library. The suite now runs both ways, so each of the two paths is checked.
 
