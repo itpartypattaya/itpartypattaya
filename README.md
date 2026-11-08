@@ -1,12 +1,18 @@
 <a href="https://itparty.club/about"><img src="assets/header.jpg" width="100%" alt="Anton Vaskov. Digital marketer in Pattaya, Thailand. AI agents for a real community."></a>
 
-<a href="https://itparty.club/about"><img src="assets/badges/itparty-club-ac6cfc.svg" alt="Website itparty.club"></a> <a href="https://t.me/passone"><img src="assets/badges/telegram-passone-946133.svg" alt="Telegram @passone"></a> <a href="https://t.me/it_networking_pattaya"><img src="assets/badges/channel-it-party-pattaya-b01746.svg" alt="Telegram channel of IT-party Pattaya"></a> <a href="https://t.me/it_party_pattaya"><img src="assets/badges/chat-it-party-pattaya-9b923d.svg" alt="Telegram chat of IT-party Pattaya"></a> <a href="https://www.youtube.com/@IT-party-Pattaya"><img src="assets/badges/youtube-ai-meetups-b2f2bc.svg" alt="YouTube: AI meetup recordings"></a> <a href="https://hr24copilot.online"><img src="assets/badges/hr24-copilot-05a461.svg" alt="HR24 Copilot"></a> <a href="https://mafia.itparty.club"><img src="assets/badges/mafia-league-59da37.svg" alt="Mafia league of IT-party Pattaya"></a>
+**IT-party Pattaya**, the community I run
+
+<a href="https://itparty.club"><img src="assets/badges/website-itparty-club-e8fb84.svg" alt="Website itparty.club"></a> <a href="https://t.me/it_networking_pattaya"><img src="assets/badges/telegram-channel-17dda7.svg" alt="Telegram channel of IT-party Pattaya"></a> <a href="https://t.me/it_party_pattaya"><img src="assets/badges/telegram-chat-47ad27.svg" alt="Telegram chat of IT-party Pattaya"></a> <a href="https://www.youtube.com/@IT-party-Pattaya"><img src="assets/badges/youtube-ai-meetups-0c98f6.svg" alt="YouTube: AI meetup recordings"></a> <a href="https://mafia.itparty.club"><img src="assets/badges/mafia-league-8b4e1a.svg" alt="Mafia league of IT-party Pattaya"></a>
+
+**Contact and work**
+
+<a href="https://t.me/passone"><img src="assets/badges/write-to-me-telegram-passone-99e104.svg" alt="Write to me on Telegram: @passone"></a> <a href="https://hr24copilot.online"><img src="assets/badges/hr24-copilot-interview-analysis-7907be.svg" alt="HR24 Copilot: AI analysis of job interviews"></a>
 
 I am a digital marketer, not a software engineer. I run a Russian-speaking IT community in Pattaya, help a recruiting agency with its tools, and keep a family AI agent on my own server. Everything below started as a problem in one of those three places, and each repository is the part that someone else can install and use.
 
 **Stack**
 
-<img src="assets/badges/claude-code-deff2b.svg" alt="Claude Code"> <img src="assets/badges/codex-99dfba.svg" alt="Codex"> <img src="assets/badges/antigravity-c5df81.svg" alt="Antigravity"> <img src="assets/badges/hermes-agent-60331b.svg" alt="Hermes Agent"> <img src="assets/badges/python-57d4f9.svg" alt="Python"> <img src="assets/badges/remotion-f0f11b.svg" alt="Remotion"> <img src="assets/badges/ffmpeg-b8ccf5.svg" alt="FFmpeg"> <img src="assets/badges/astro-34a772.svg" alt="Astro"> <img src="assets/badges/sqlite-e843fe.svg" alt="SQLite"> <img src="assets/badges/mcp-c5dafb.svg" alt="MCP">
+<img src="assets/badges/claude-code-deff2b.svg" alt="Claude Code"> <img src="assets/badges/codex-99dfba.svg" alt="Codex"> <img src="assets/badges/antigravity-c5df81.svg" alt="Antigravity"> <img src="assets/badges/hermes-agent-60331b.svg" alt="Hermes Agent"> <img src="assets/badges/python-57d4f9.svg" alt="Python"> <img src="assets/badges/remotion-314e8f.svg" alt="Remotion"> <img src="assets/badges/ffmpeg-b8ccf5.svg" alt="FFmpeg"> <img src="assets/badges/astro-34a772.svg" alt="Astro"> <img src="assets/badges/sqlite-e843fe.svg" alt="SQLite"> <img src="assets/badges/mcp-c5dafb.svg" alt="MCP">
 
 **Hardware**
 

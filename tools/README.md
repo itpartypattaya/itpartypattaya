@@ -38,6 +38,6 @@ python tools/badges.py
 
 It downloads every remote static badge, saves it and points the README at the file. If any badge fails to download as an SVG, nothing is changed.
 
-The Codex and Hermes Agent icons come from [Lobe Icons](https://github.com/lobehub/lobe-icons) (MIT), `@lobehub/icons-static-svg@1.100.0`, recoloured white. The Hermes icon is too large for a shields.io URL (HTTP 431), so `hermes-agent-*.svg` was made by hand: a shields.io badge of the same text with a placeholder logo, whose `<image href>` was replaced with the icon.
+The Codex and Hermes Agent icons come from [Lobe Icons](https://github.com/lobehub/lobe-icons) (MIT), `@lobehub/icons-static-svg@1.100.0`, recoloured white; the Remotion icon is `packages/skills/skills/remotion-docs/assets/remotion-icon.svg` from [remotion-dev/remotion](https://github.com/remotion-dev/remotion), its fill changed to white. The Hermes icon is too large for a shields.io URL (HTTP 431), so `hermes-agent-*.svg` was made by hand: a shields.io badge of the same text with a placeholder logo, whose `<image href>` was replaced with the icon.
 
 Fonts: [Unbounded](https://fonts.google.com/specimen/Unbounded) and [Golos Text](https://fonts.google.com/specimen/Golos+Text), both under the SIL Open Font License 1.1 (Latin subsets).
