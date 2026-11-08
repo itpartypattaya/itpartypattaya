@@ -6,11 +6,11 @@ I am a digital marketer, not a software engineer. I run a Russian-speaking IT co
 
 **Stack**
 
-<img src="assets/badges/claude-code-deff2b.svg" alt="Claude Code"> <img src="assets/badges/codex-cli-96c235.svg" alt="Codex CLI"> <img src="assets/badges/hermes-agent-d77433.svg" alt="Hermes Agent"> <img src="assets/badges/python-57d4f9.svg" alt="Python"> <img src="assets/badges/node-js-9ae3b9.svg" alt="Node.js"> <img src="assets/badges/remotion-f0f11b.svg" alt="Remotion"> <img src="assets/badges/ffmpeg-b8ccf5.svg" alt="FFmpeg"> <img src="assets/badges/astro-34a772.svg" alt="Astro"> <img src="assets/badges/sqlite-e843fe.svg" alt="SQLite"> <img src="assets/badges/mcp-c5dafb.svg" alt="MCP"> <img src="assets/badges/telegram-4730c3.svg" alt="Telegram"> <img src="assets/badges/github-actions-8e8803.svg" alt="GitHub Actions">
+<img src="assets/badges/claude-code-deff2b.svg" alt="Claude Code"> <img src="assets/badges/codex-cli-96c235.svg" alt="Codex CLI"> <img src="assets/badges/antigravity-c5df81.svg" alt="Antigravity"> <img src="assets/badges/hermes-agent-d77433.svg" alt="Hermes Agent"> <img src="assets/badges/python-57d4f9.svg" alt="Python"> <img src="assets/badges/remotion-f0f11b.svg" alt="Remotion"> <img src="assets/badges/ffmpeg-b8ccf5.svg" alt="FFmpeg"> <img src="assets/badges/astro-34a772.svg" alt="Astro"> <img src="assets/badges/sqlite-e843fe.svg" alt="SQLite"> <img src="assets/badges/mcp-c5dafb.svg" alt="MCP"> <img src="assets/badges/github-actions-8e8803.svg" alt="GitHub Actions">
 
 **Hardware**
 
-<img src="assets/badges/ovh-vps-4-vcpu-8-gb-44f40a.svg" alt="OVH VPS · 4 vCPU · 8 GB"> <img src="assets/badges/debian-12-411d7d.svg" alt="Debian 12"> <img src="assets/badges/asus-expertbook-b1500-cc6157.svg" alt="ASUS ExpertBook B1500"> <img src="assets/badges/intel-core-i5-1135g7-380b20.svg" alt="Intel Core i5-1135G7"> <img src="assets/badges/nvidia-mx330-d2eeb9.svg" alt="NVIDIA MX330"> <img src="assets/badges/windows-10-pro-312f82.svg" alt="Windows 10 Pro"> <img src="assets/badges/yandex-station-lite-root-b3ce87.svg" alt="Yandex Station Lite · root">
+<img src="assets/badges/ovh-vps-4-vcpu-8-gb-44f40a.svg" alt="OVH VPS · 4 vCPU · 8 GB"> <img src="assets/badges/asus-expertbook-b1500-cc6157.svg" alt="ASUS ExpertBook B1500"> <img src="assets/badges/intel-core-i5-1135g7-380b20.svg" alt="Intel Core i5-1135G7"> <img src="assets/badges/nvidia-mx330-d2eeb9.svg" alt="NVIDIA MX330"> <img src="assets/badges/yandex-station-lite-root-b3ce87.svg" alt="Yandex Station Lite · root">
 
 <a href="https://github.com/itpartypattaya?tab=repositories"><img src="assets/stats.svg" width="100%" alt="GitHub stats of itpartypattaya: repositories, stars, releases, green CI and languages, rebuilt daily from the public GitHub API"></a>
 
