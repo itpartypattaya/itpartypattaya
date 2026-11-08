@@ -2,11 +2,11 @@
 
 **IT-party Pattaya**, the community I run
 
-<a href="https://itparty.club"><img src="assets/badges/website-itparty-club-e8fb84.svg" alt="Website itparty.club"></a> <a href="https://t.me/it_networking_pattaya"><img src="assets/badges/telegram-channel-17dda7.svg" alt="Telegram channel of IT-party Pattaya"></a> <a href="https://t.me/it_party_pattaya"><img src="assets/badges/telegram-chat-47ad27.svg" alt="Telegram chat of IT-party Pattaya"></a> <a href="https://www.youtube.com/@IT-party-Pattaya"><img src="assets/badges/youtube-ai-meetups-0c98f6.svg" alt="YouTube: AI meetup recordings"></a> <a href="https://mafia.itparty.club"><img src="assets/badges/mafia-league-8b4e1a.svg" alt="Mafia league of IT-party Pattaya"></a>
+<a href="https://itparty.club"><img src="assets/badges/website-itparty-club-cf35e4.svg" alt="Website itparty.club"></a> <a href="https://t.me/it_networking_pattaya"><img src="assets/badges/telegram-channel-17dda7.svg" alt="Telegram channel of IT-party Pattaya"></a> <a href="https://t.me/it_party_pattaya"><img src="assets/badges/telegram-chat-47ad27.svg" alt="Telegram chat of IT-party Pattaya"></a> <a href="https://www.youtube.com/@IT-party-Pattaya"><img src="assets/badges/youtube-ai-meetups-0c98f6.svg" alt="YouTube: AI meetup recordings"></a> <a href="https://mafia.itparty.club"><img src="assets/badges/mafia-league-e0bdb6.svg" alt="Mafia league of IT-party Pattaya"></a>
 
 **Contact and work**
 
-<a href="https://t.me/passone"><img src="assets/badges/write-to-me-telegram-passone-99e104.svg" alt="Write to me on Telegram: @passone"></a> <a href="https://hr24copilot.online"><img src="assets/badges/hr24-copilot-interview-analysis-7907be.svg" alt="HR24 Copilot: AI analysis of job interviews"></a>
+<a href="https://t.me/passone"><img src="assets/badges/write-to-me-telegram-2c813d.svg" alt="Write to me on Telegram"></a> <a href="https://hr24copilot.online"><img src="assets/badges/hr24-copilot-9e22aa.svg" alt="HR24 Copilot: AI analysis of job interviews"></a>
 
 I am a digital marketer, not a software engineer. I run a Russian-speaking IT community in Pattaya, help a recruiting agency with its tools, and keep a family AI agent on my own server. Everything below started as a problem in one of those three places, and each repository is the part that someone else can install and use.
 
