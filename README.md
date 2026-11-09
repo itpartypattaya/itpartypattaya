@@ -20,9 +20,91 @@ I am a digital marketer, not a software engineer. I run a Russian-speaking IT co
 
 <a href="https://github.com/itpartypattaya?tab=repositories"><img src="assets/stats.svg" width="100%" alt="GitHub stats of itpartypattaya: repositories, stars, releases, green CI and languages, rebuilt daily from the public GitHub API"></a>
 
+## Hermes Agent skills and plugins
+
+[Hermes Agent](https://github.com/NousResearch/hermes-agent) by Nous Research is the agent I use every day. Four of the plugins below are listed in the official Hermes Plugin Catalog.
+
+### holographic · memory provider
+
+<a href="https://github.com/itpartypattaya/hermes-plugin-holographic"><img src="assets/holographic.jpg" width="100%" alt="holographic: local fact memory for Hermes, no API key, no network, no model calls"></a>
+
+The local memory provider that shipped inside Hermes core as `holographic`: a SQLite fact store with full-text search, trust scoring, entity resolution and HRR retrieval. Everything stays on your machine.
+
+**Why it exists.** When the provider was scheduled to leave Hermes core on 15 October 2026, Nous Research handed it off, and since October 2026 I maintain it. Same provider name, same config, same database: users who run `memory.provider: holographic` keep their facts after the switch.
+
+**What it is.** A Hermes plugin with two tools, `fact_store` and `fact_feedback`. Before each turn it recalls up to five facts that pass a relevance gate, so "ok, thanks" recalls nothing, and frames them as data. New facts that look like JSON, chat markup or instructions are refused, and possible conflicts are pointed out but never edited away. Words match in their inflected forms in 18 languages, from Russian and Arabic to Hindi, with Chinese, Japanese, Korean and Thai matched by character n-grams. 3,308 tests run on Linux, macOS and Windows, against both the current Hermes code and its latest release. Its sibling for Claude Code and Codex is holographic-memory, in the next section.
+
+<a href="https://github.com/itpartypattaya/hermes-plugin-holographic"><img src="assets/badges/repository-9e885d.svg" alt="hermes-plugin-holographic on GitHub"></a> <a href="https://github.com/itpartypattaya/hermes-plugin-holographic/releases/latest"><img src="assets/badges/latest-release-18b8cb.svg" alt="Latest release"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/holographic"><img src="assets/badges/listed-in-hermes-plugin-catalog-60bcc5.svg" alt="Listed in the Hermes Plugin Catalog"></a> <a href="https://github.com/itpartypattaya/hermes-plugin-holographic/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-plugin-holographic?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
+
+Install: `hermes plugins install holographic`, then `hermes config set memory.provider holographic`.
+
+If you use holographic memory, a star on the repository helps other Hermes users find the maintained copy.
+
+### hermes-cron
+
+<a href="https://github.com/itpartypattaya/hermes-cron"><img src="assets/hermes-cron.jpg" width="100%" alt="hermes-cron: a read-only doctor that finds cron failures that look like success"></a>
+
+A skill that teaches Hermes to work with its cron scheduler carefully, plus a read-only doctor script that checks existing jobs.
+
+**Why it exists.** Cron failures in an agent look like success. `30m` written instead of `in 30m`, a message delivered twice, `deliver: origin` pointing to the wrong chat, a half-paused job, a model pinned to a job and forgotten: nothing reports an error, the reminder simply never arrives.
+
+**What it is.** A Hermes skill that can also be installed as a plugin. Python standard library only. The doctor only reads: no network, no API keys, it registers no tools or hooks and writes nothing.
+
+<a href="https://github.com/itpartypattaya/hermes-cron"><img src="assets/badges/repository-9e885d.svg" alt="hermes-cron on GitHub"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-cron"><img src="assets/badges/listed-in-hermes-plugin-catalog-60bcc5.svg" alt="Listed in the Hermes Plugin Catalog"></a> <a href="https://github.com/itpartypattaya/hermes-cron/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-cron?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
+
+Install: `hermes skills install itpartypattaya/hermes-cron/skills/hermes-cron`
+
+### hermes-dreaming
+
+<a href="https://github.com/itpartypattaya/hermes-dreaming"><img src="assets/hermes-dreaming.jpg" width="100%" alt="hermes-dreaming: nightly memory consolidation for the Hermes agent"></a>
+
+Nightly, deterministic memory consolidation for Hermes: the agent "dreams" over the day's conversations and proposes only the memory updates worth keeping.
+
+**Why it exists.** Useful facts never reach long-term memory, while the memory itself fills up with stale entries and hits its character limit. The script does the sorting without an LLM and wakes the agent only when there is something to decide.
+
+**What it is.** A plugin or a plain skill, Python standard library, Hermes 0.21 or later. No network, and the scripts never call a model. The agent makes at most six memory changes a night and nothing is deleted from storage. Secrets and prompt-injection attempts go to quarantine; the README says plainly that this is a regex filter, not a guarantee. Its sibling for Claude Code, Codex and Antigravity is agent-dreaming, in the next section.
+
+<a href="https://github.com/itpartypattaya/hermes-dreaming"><img src="assets/badges/repository-9e885d.svg" alt="hermes-dreaming on GitHub"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-dreaming"><img src="assets/badges/listed-in-hermes-plugin-catalog-60bcc5.svg" alt="Listed in the Hermes Plugin Catalog"></a> <a href="https://github.com/itpartypattaya/hermes-dreaming/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-dreaming?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
+
+Install from the catalog: `hermes plugins install hermes-dreaming`
+
+### hermes-field-notes
+
+<a href="https://github.com/itpartypattaya/hermes-field-notes"><img src="assets/field-notes.jpg" width="100%" alt="hermes-field-notes: pitfalls with root cause and core patches that survive an update"></a>
+
+Field notes for Hermes: pitfalls recorded with their root cause, plus a registry of local patches to the Hermes core that is checked after every `hermes update`.
+
+**Why it exists.** What an agent learned the hard way is lost with the chat, and `hermes update` silently wipes local fixes to the engine. The registry makes that loss visible the moment it happens.
+
+**What it is.** A skill or plugin, Python 3.11+ standard library. Notes stay on the machine and the core is only read. `--read-only` mode guarantees no writes and no network; otherwise the network is used for an optional Telegram dashboard and a public GitHub API check every 12 hours, which can be switched off.
+
+<a href="https://github.com/itpartypattaya/hermes-field-notes"><img src="assets/badges/repository-9e885d.svg" alt="hermes-field-notes on GitHub"></a> <a href="https://github.com/itpartypattaya/hermes-field-notes/releases/latest"><img src="assets/badges/latest-release-18b8cb.svg" alt="Latest release"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-field-notes"><img src="assets/badges/listed-in-hermes-plugin-catalog-60bcc5.svg" alt="Listed in the Hermes Plugin Catalog"></a> <a href="https://github.com/itpartypattaya/hermes-field-notes/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-field-notes?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
+
+Install: `hermes skills install itpartypattaya/hermes-field-notes/skills/hermes-field-notes`
+
+### hermes-dashboard
+
+<a href="https://github.com/itpartypattaya/hermes-dashboard"><img src="assets/hermes-dashboard.jpg" width="100%" alt="hermes-dashboard: what the agent does and costs, from its own telemetry"></a>
+
+A static system dashboard for a Hermes installation: host status, security, model routing, honest cost, memory, cron economics and a capability map, rebuilt by cron from the agent's own telemetry.
+
+**Why it exists.** I wanted to see what my agent actually does and costs without trusting numbers typed in by hand. The rule of the project: if a number cannot be collected automatically, it is not on the page.
+
+**What it is.** Python 3.9+, standard library only, English and Russian. The pages are `noindex`, hold only aggregates and no secrets, and have no runtime; the only outside request is Google Fonts, which one setting turns off.
+
+<a href="https://github.com/itpartypattaya/hermes-dashboard"><img src="assets/badges/repository-9e885d.svg" alt="hermes-dashboard on GitHub"></a> <a href="https://github.com/itpartypattaya/hermes-dashboard/releases/latest"><img src="assets/badges/latest-release-18b8cb.svg" alt="Latest release"></a> <a href="https://github.com/itpartypattaya/hermes-dashboard/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-dashboard?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
+
+Install: clone into `~/.hermes/hermes-dashboard` and run `bin/hermes-dashboard build`; the README has the config steps.
+
+### telegram-stories-stat
+
+Who viewed your Telegram stories and when, statistics tables and opt-in auto-replies by rules. A Hermes skill backed by a small Telethon service, no LLM inside. Install: `hermes skills install itpartypattaya/telegram-stories-stat/skills/telegram-stories` · [repository](https://github.com/itpartypattaya/telegram-stories-stat)
+
+<a href="https://github.com/itpartypattaya/telegram-stories-stat/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/telegram-stories-stat?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
+
 ## Claude Code and Codex tools
 
-Four of my repositories are one idea on two platforms: an agent should remember what you told it, and someone should check that what it remembers is still true. For Claude Code and Codex that is holographic-memory and agent-dreaming, right below; for Hermes it is holographic and hermes-dreaming, further down.
+Four of my repositories are one idea on two platforms: an agent should remember what you told it, and someone should check that what it remembers is still true. For Hermes it is holographic and hermes-dreaming, above; for Claude Code and Codex it is holographic-memory and agent-dreaming, right below.
 
 ### holographic-memory
 
@@ -30,7 +112,7 @@ Four of my repositories are one idea on two platforms: an agent should remember 
 
 Long-term memory for Claude Code and Codex, CLI and desktop app: a local SQLite fact store with search in 18 languages, trust scoring, entity resolution, fact history and HRR recall.
 
-**Why it exists.** Each agent keeps its own memory, so what you explained to Claude Code in the morning Codex does not know in the evening. Here both read and write one store on your machine. The engine began as a copy of the Hermes provider holographic, described below.
+**Why it exists.** Each agent keeps its own memory, so what you explained to Claude Code in the morning Codex does not know in the evening. Here both read and write one store on your machine. The engine began as a copy of the Hermes provider holographic, described above.
 
 **What it is.** A hook adds up to five relevant facts to the context before each message, framed as data, and a local MCP server gives the agent 23 memory tools: store, search, change with history, merge duplicates, forget, export. Text that reads like an instruction or holds a credential is refused. By default there is no API key, no network and no model calls; search by meaning and rescoring are opt-in and send text only to an endpoint you choose. Early, version 0.x.
 
@@ -50,7 +132,7 @@ A nightly, read-only review of agent memory for Claude Code, Codex CLI and Antig
 
 **Why it exists.** Agents that remember also remember wrong things: a guess stored as a fact, one fact told twice in other words, a note about a project that ended a month ago. Nobody goes back to clean that up, and the agent keeps answering from it.
 
-**What it is.** The nightly pass has no model and no network and takes a few seconds; it works with holographic-memory, the reference MCP `memory` server and Claude Code's own memory notes. Your messages are read for the pass and stored nowhere. Memory changes only when you answer, and only through the memory tools your agent already has. Its sibling for Hermes is hermes-dreaming, further down.
+**What it is.** The nightly pass has no model and no network and takes a few seconds; it works with holographic-memory, the reference MCP `memory` server and Claude Code's own memory notes. Your messages are read for the pass and stored nowhere. Memory changes only when you answer, and only through the memory tools your agent already has. Its sibling for Hermes is hermes-dreaming, above.
 
 <a href="https://github.com/itpartypattaya/agent-dreaming"><img src="assets/badges/repository-9e885d.svg" alt="agent-dreaming on GitHub"></a> <a href="https://github.com/itpartypattaya/agent-dreaming/releases/latest"><img src="assets/badges/latest-release-18b8cb.svg" alt="Latest release"></a> <a href="https://github.com/itpartypattaya/agent-dreaming/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/agent-dreaming?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
@@ -118,7 +200,7 @@ Engineering field notes shared by Claude Code and Codex CLI: findings that outli
 
 **Why it exists.** Both agents use the same `SKILL.md` format, so one skill can serve both, with one store of notes per machine: what one agent records, the other finds. Hard-won diagnosis stops disappearing with the chat it happened in.
 
-**What it is.** A skill with a Python 3.9+ standard-library script and installers for Windows and Linux/macOS that link it into both agents' skill folders. The repository holds only the skill; the notes stay local and never go into git, because they contain real paths, versions and project details. No network. Its bigger sibling for Hermes is hermes-field-notes below.
+**What it is.** A skill with a Python 3.9+ standard-library script and installers for Windows and Linux/macOS that link it into both agents' skill folders. The repository holds only the skill; the notes stay local and never go into git, because they contain real paths, versions and project details. No network. Its bigger sibling for Hermes is hermes-field-notes, above.
 
 <a href="https://github.com/itpartypattaya/field-notes"><img src="assets/badges/repository-9e885d.svg" alt="field-notes on GitHub"></a> <a href="https://github.com/itpartypattaya/field-notes/releases/latest"><img src="assets/badges/latest-release-18b8cb.svg" alt="Latest release"></a> <a href="https://github.com/itpartypattaya/field-notes/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/field-notes?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
@@ -135,88 +217,6 @@ A Codex skill that reviews a club game of Mafia from two audio transcripts and t
 **What it is.** A `SKILL.md` method plus two standard-library Python scripts that score the review and validate the bundle before import.
 
 <a href="https://github.com/itpartypattaya/mafia-review-skill"><img src="assets/badges/repository-9e885d.svg" alt="mafia-review-skill on GitHub"></a> <a href="https://github.com/itpartypattaya/mafia-review-skill/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/mafia-review-skill?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
-
-## Hermes Agent skills and plugins
-
-[Hermes Agent](https://github.com/NousResearch/hermes-agent) by Nous Research is the agent I use every day. Four of the plugins below are listed in the official Hermes Plugin Catalog.
-
-### holographic · memory provider
-
-<a href="https://github.com/itpartypattaya/hermes-plugin-holographic"><img src="assets/holographic.jpg" width="100%" alt="holographic: local fact memory for Hermes, no API key, no network, no model calls"></a>
-
-The local memory provider that shipped inside Hermes core as `holographic`: a SQLite fact store with full-text search, trust scoring, entity resolution and HRR retrieval. Everything stays on your machine.
-
-**Why it exists.** When the provider was scheduled to leave Hermes core on 15 October 2026, Nous Research handed it off, and since October 2026 I maintain it. Same provider name, same config, same database: users who run `memory.provider: holographic` keep their facts after the switch.
-
-**What it is.** A Hermes plugin with two tools, `fact_store` and `fact_feedback`. Before each turn it recalls up to five facts that pass a relevance gate, so "ok, thanks" recalls nothing, and frames them as data. New facts that look like JSON, chat markup or instructions are refused, and possible conflicts are pointed out but never edited away. Words match in their inflected forms in 18 languages, from Russian and Arabic to Hindi, with Chinese, Japanese, Korean and Thai matched by character n-grams. 3,308 tests run on Linux, macOS and Windows, against both the current Hermes code and its latest release. Its sibling for Claude Code and Codex is holographic-memory, at the top of this page.
-
-<a href="https://github.com/itpartypattaya/hermes-plugin-holographic"><img src="assets/badges/repository-9e885d.svg" alt="hermes-plugin-holographic on GitHub"></a> <a href="https://github.com/itpartypattaya/hermes-plugin-holographic/releases/latest"><img src="assets/badges/latest-release-18b8cb.svg" alt="Latest release"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/holographic"><img src="assets/badges/listed-in-hermes-plugin-catalog-60bcc5.svg" alt="Listed in the Hermes Plugin Catalog"></a> <a href="https://github.com/itpartypattaya/hermes-plugin-holographic/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-plugin-holographic?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
-
-Install: `hermes plugins install holographic`, then `hermes config set memory.provider holographic`.
-
-If you use holographic memory, a star on the repository helps other Hermes users find the maintained copy.
-
-### hermes-cron
-
-<a href="https://github.com/itpartypattaya/hermes-cron"><img src="assets/hermes-cron.jpg" width="100%" alt="hermes-cron: a read-only doctor that finds cron failures that look like success"></a>
-
-A skill that teaches Hermes to work with its cron scheduler carefully, plus a read-only doctor script that checks existing jobs.
-
-**Why it exists.** Cron failures in an agent look like success. `30m` written instead of `in 30m`, a message delivered twice, `deliver: origin` pointing to the wrong chat, a half-paused job, a model pinned to a job and forgotten: nothing reports an error, the reminder simply never arrives.
-
-**What it is.** A Hermes skill that can also be installed as a plugin. Python standard library only. The doctor only reads: no network, no API keys, it registers no tools or hooks and writes nothing.
-
-<a href="https://github.com/itpartypattaya/hermes-cron"><img src="assets/badges/repository-9e885d.svg" alt="hermes-cron on GitHub"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-cron"><img src="assets/badges/listed-in-hermes-plugin-catalog-60bcc5.svg" alt="Listed in the Hermes Plugin Catalog"></a> <a href="https://github.com/itpartypattaya/hermes-cron/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-cron?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
-
-Install: `hermes skills install itpartypattaya/hermes-cron/skills/hermes-cron`
-
-### hermes-dreaming
-
-<a href="https://github.com/itpartypattaya/hermes-dreaming"><img src="assets/hermes-dreaming.jpg" width="100%" alt="hermes-dreaming: nightly memory consolidation for the Hermes agent"></a>
-
-Nightly, deterministic memory consolidation for Hermes: the agent "dreams" over the day's conversations and proposes only the memory updates worth keeping.
-
-**Why it exists.** Useful facts never reach long-term memory, while the memory itself fills up with stale entries and hits its character limit. The script does the sorting without an LLM and wakes the agent only when there is something to decide.
-
-**What it is.** A plugin or a plain skill, Python standard library, Hermes 0.21 or later. No network, and the scripts never call a model. The agent makes at most six memory changes a night and nothing is deleted from storage. Secrets and prompt-injection attempts go to quarantine; the README says plainly that this is a regex filter, not a guarantee. Its sibling for Claude Code, Codex and Antigravity is agent-dreaming, at the top of this page.
-
-<a href="https://github.com/itpartypattaya/hermes-dreaming"><img src="assets/badges/repository-9e885d.svg" alt="hermes-dreaming on GitHub"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-dreaming"><img src="assets/badges/listed-in-hermes-plugin-catalog-60bcc5.svg" alt="Listed in the Hermes Plugin Catalog"></a> <a href="https://github.com/itpartypattaya/hermes-dreaming/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-dreaming?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
-
-Install from the catalog: `hermes plugins install hermes-dreaming`
-
-### hermes-field-notes
-
-<a href="https://github.com/itpartypattaya/hermes-field-notes"><img src="assets/field-notes.jpg" width="100%" alt="hermes-field-notes: pitfalls with root cause and core patches that survive an update"></a>
-
-Field notes for Hermes: pitfalls recorded with their root cause, plus a registry of local patches to the Hermes core that is checked after every `hermes update`.
-
-**Why it exists.** What an agent learned the hard way is lost with the chat, and `hermes update` silently wipes local fixes to the engine. The registry makes that loss visible the moment it happens.
-
-**What it is.** A skill or plugin, Python 3.11+ standard library. Notes stay on the machine and the core is only read. `--read-only` mode guarantees no writes and no network; otherwise the network is used for an optional Telegram dashboard and a public GitHub API check every 12 hours, which can be switched off.
-
-<a href="https://github.com/itpartypattaya/hermes-field-notes"><img src="assets/badges/repository-9e885d.svg" alt="hermes-field-notes on GitHub"></a> <a href="https://github.com/itpartypattaya/hermes-field-notes/releases/latest"><img src="assets/badges/latest-release-18b8cb.svg" alt="Latest release"></a> <a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-field-notes"><img src="assets/badges/listed-in-hermes-plugin-catalog-60bcc5.svg" alt="Listed in the Hermes Plugin Catalog"></a> <a href="https://github.com/itpartypattaya/hermes-field-notes/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-field-notes?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
-
-Install: `hermes skills install itpartypattaya/hermes-field-notes/skills/hermes-field-notes`
-
-### hermes-dashboard
-
-<a href="https://github.com/itpartypattaya/hermes-dashboard"><img src="assets/hermes-dashboard.jpg" width="100%" alt="hermes-dashboard: what the agent does and costs, from its own telemetry"></a>
-
-A static system dashboard for a Hermes installation: host status, security, model routing, honest cost, memory, cron economics and a capability map, rebuilt by cron from the agent's own telemetry.
-
-**Why it exists.** I wanted to see what my agent actually does and costs without trusting numbers typed in by hand. The rule of the project: if a number cannot be collected automatically, it is not on the page.
-
-**What it is.** Python 3.9+, standard library only, English and Russian. The pages are `noindex`, hold only aggregates and no secrets, and have no runtime; the only outside request is Google Fonts, which one setting turns off.
-
-<a href="https://github.com/itpartypattaya/hermes-dashboard"><img src="assets/badges/repository-9e885d.svg" alt="hermes-dashboard on GitHub"></a> <a href="https://github.com/itpartypattaya/hermes-dashboard/releases/latest"><img src="assets/badges/latest-release-18b8cb.svg" alt="Latest release"></a> <a href="https://github.com/itpartypattaya/hermes-dashboard/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/hermes-dashboard?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
-
-Install: clone into `~/.hermes/hermes-dashboard` and run `bin/hermes-dashboard build`; the README has the config steps.
-
-### telegram-stories-stat
-
-Who viewed your Telegram stories and when, statistics tables and opt-in auto-replies by rules. A Hermes skill backed by a small Telethon service, no LLM inside. Install: `hermes skills install itpartypattaya/telegram-stories-stat/skills/telegram-stories` · [repository](https://github.com/itpartypattaya/telegram-stories-stat)
-
-<a href="https://github.com/itpartypattaya/telegram-stories-stat/stargazers"><img src="https://img.shields.io/github/stars/itpartypattaya/telegram-stories-stat?style=for-the-badge&logo=github&label=Stars&color=F5A623&labelColor=141A4A" alt="GitHub stars"></a>
 
 ## Smart speaker
 
