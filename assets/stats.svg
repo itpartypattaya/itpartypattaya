@@ -12,13 +12,13 @@
 <text class="v" x="84" y="244">15</text>
 <text class="l" x="84" y="267">Repositories</text>
 <rect x="334" y="206" width="254" height="72" rx="12" fill="#141a4a" fill-opacity="0.75" stroke="#2b3570"/>
-<text class="v" x="354" y="244">98</text>
+<text class="v" x="354" y="244">101</text>
 <text class="l" x="354" y="267">Stars</text>
 <rect x="64" y="290" width="254" height="72" rx="12" fill="#141a4a" fill-opacity="0.75" stroke="#2b3570"/>
-<text class="v" x="84" y="328">185</text>
+<text class="v" x="84" y="328">187</text>
 <text class="l" x="84" y="351">Releases</text>
 <rect x="334" y="290" width="254" height="72" rx="12" fill="#141a4a" fill-opacity="0.75" stroke="#2b3570"/>
-<text class="v" x="354" y="328">11 / 13</text>
+<text class="v" x="354" y="328">12 / 13</text>
 <text class="l" x="354" y="351">Repos with green CI</text>
 <rect x="640" y="44" width="560" height="312" rx="14" fill="#141a4a" fill-opacity="0.75" stroke="#2b3570"/>
 <circle cx="670" cy="70" r="6" fill="#2b3570"/>
@@ -26,13 +26,13 @@
 <circle cx="714" cy="70" r="6" fill="#2b3570"/>
 <text class="h" x="742" y="75">languages · bytes in 15 repositories</text>
 <g clip-path="url(#barclip)">
-<rect class="seg" x="664.000000" y="100" width="466.267064856" height="12" fill="#3572A5"/>
-<rect class="seg" x="1130.267065" y="100" width="17.125200954" height="12" fill="#e34c26"/>
-<rect class="seg" x="1147.392266" y="100" width="12.297306984" height="12" fill="#3178c6"/>
-<rect class="seg" x="1159.689573" y="100" width="9.941759472" height="12" fill="#f1e05a"/>
-<rect class="seg" x="1169.631332" y="100" width="3.346602285" height="12" fill="#8a63d2"/>
-<rect class="seg" x="1172.977935" y="100" width="2.880346128" height="12" fill="#89e051"/>
-<rect class="seg" x="1175.858281" y="100" width="0.141719321" height="12" fill="#7d86c2"/>
+<rect class="seg" x="664.000000" y="100" width="466.383244082" height="12" fill="#3572A5"/>
+<rect class="seg" x="1130.383244" y="100" width="17.081696364" height="12" fill="#e34c26"/>
+<rect class="seg" x="1147.464940" y="100" width="12.266067100" height="12" fill="#3178c6"/>
+<rect class="seg" x="1159.731008" y="100" width="9.916503583" height="12" fill="#f1e05a"/>
+<rect class="seg" x="1169.647511" y="100" width="3.338100629" height="12" fill="#8a63d2"/>
+<rect class="seg" x="1172.985612" y="100" width="2.873028942" height="12" fill="#89e051"/>
+<rect class="seg" x="1175.858641" y="100" width="0.141359299" height="12" fill="#7d86c2"/>
 </g>
 <circle cx="670" cy="148" r="6" fill="#3572A5"/>
 <text class="m" x="686" y="154">Python</text>
