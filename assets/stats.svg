@@ -15,7 +15,7 @@
 <text class="v" x="354" y="244">125</text>
 <text class="l" x="354" y="267">Stars</text>
 <rect x="64" y="290" width="254" height="72" rx="12" fill="#141a4a" fill-opacity="0.75" stroke="#2b3570"/>
-<text class="v" x="84" y="328">220</text>
+<text class="v" x="84" y="328">223</text>
 <text class="l" x="84" y="351">Releases</text>
 <rect x="334" y="290" width="254" height="72" rx="12" fill="#141a4a" fill-opacity="0.75" stroke="#2b3570"/>
 <text class="v" x="354" y="328">13 / 13</text>
@@ -26,17 +26,17 @@
 <circle cx="714" cy="70" r="6" fill="#2b3570"/>
 <text class="h" x="742" y="75">languages · bytes in 15 repositories</text>
 <g clip-path="url(#barclip)">
-<rect class="seg" x="664.000000" y="100" width="468.545677400" height="12" fill="#3572A5"/>
-<rect class="seg" x="1132.545677" y="100" width="16.225668994" height="12" fill="#e34c26"/>
-<rect class="seg" x="1148.771346" y="100" width="11.680515350" height="12" fill="#3178c6"/>
-<rect class="seg" x="1160.451862" y="100" width="9.419550687" height="12" fill="#f1e05a"/>
-<rect class="seg" x="1169.871412" y="100" width="3.170815985" height="12" fill="#8a63d2"/>
-<rect class="seg" x="1173.042228" y="100" width="2.823496326" height="12" fill="#89e051"/>
-<rect class="seg" x="1175.865725" y="100" width="0.134275259" height="12" fill="#7d86c2"/>
+<rect class="seg" x="664.000000" y="100" width="468.741004096" height="12" fill="#3572A5"/>
+<rect class="seg" x="1132.741004" y="100" width="16.152734793" height="12" fill="#e34c26"/>
+<rect class="seg" x="1148.893739" y="100" width="11.628011564" height="12" fill="#3178c6"/>
+<rect class="seg" x="1160.521750" y="100" width="9.377209911" height="12" fill="#f1e05a"/>
+<rect class="seg" x="1169.898960" y="100" width="3.156563202" height="12" fill="#8a63d2"/>
+<rect class="seg" x="1173.055524" y="100" width="2.810804741" height="12" fill="#89e051"/>
+<rect class="seg" x="1175.866328" y="100" width="0.133671693" height="12" fill="#7d86c2"/>
 </g>
 <circle cx="670" cy="148" r="6" fill="#3572A5"/>
 <text class="m" x="686" y="154">Python</text>
-<text class="p" x="908" y="154" text-anchor="end">91.5%</text>
+<text class="p" x="908" y="154" text-anchor="end">91.6%</text>
 <circle cx="670" cy="188" r="6" fill="#e34c26"/>
 <text class="m" x="686" y="194">HTML</text>
 <text class="p" x="908" y="194" text-anchor="end">3.2%</text>
@@ -51,7 +51,7 @@
 <text class="p" x="1176" y="154" text-anchor="end">0.6%</text>
 <circle cx="938" cy="188" r="6" fill="#89e051"/>
 <text class="m" x="954" y="194">Shell</text>
-<text class="p" x="1176" y="194" text-anchor="end">0.6%</text>
+<text class="p" x="1176" y="194" text-anchor="end">0.5%</text>
 <circle cx="938" cy="228" r="6" fill="#7d86c2"/>
 <text class="m" x="954" y="234">Other</text>
 <text class="p" x="1176" y="234" text-anchor="end">&lt;0.1%</text>
